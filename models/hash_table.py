@@ -16,6 +16,16 @@ class HashMap:
         self.map[key_hash] = key_value
         return True
     
+    def update(self, package_id: int, delivery_address: str, delivery_deadline: str, delivery_city: str, 
+            delivery_zip: str, package_weight: str, delivery_status: str) -> list:
+        key = package_id
+        value = [delivery_address, delivery_deadline, delivery_city, delivery_zip, package_weight, delivery_status]
+        key_hash = self._get_hash(key)
+        key_value = [key, value]
+        self.map[key_hash] = key_value
+        return self.map
+
+    
     def get(self, key: int) -> list or None:
         key_hash = self._get_hash(key)
         if self.map[key_hash] is not None:

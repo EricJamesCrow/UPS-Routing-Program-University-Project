@@ -1,5 +1,5 @@
 from models.hash_table import HashMap
-from models.graph import Vertex, AdjacencyList
+from models.graph import AdjacencyList
 from itertools import islice
 import csv
 
@@ -7,7 +7,7 @@ def read_package_data(file: str) -> HashMap:
     h = HashMap()
     with open(file) as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
-        for row in islice(readCSV, 8, None):
+        for row in islice(readCSV, 5, None):
             package_id = int(row[0])
             delivery_address = row[1]
             delivery_deadline = row[5]
@@ -23,7 +23,9 @@ def read_distance_data(file: str) -> AdjacencyList:
     reader = csv.reader(open(file), delimiter=',')
     headers = next(islice(reader, 4, None))
     for h in headers[2:]:
-        new_vertex = Vertex(h)
+        h = h.split('\n')
+        address = h[1].replace(',', '').strip()
+        new_vertex = address
         vertexes.append(new_vertex)
         adjList.add_vertex(new_vertex)
     index = 0
