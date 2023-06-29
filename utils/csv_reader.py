@@ -14,7 +14,7 @@ def read_package_data(file: str) -> HashMap:
             delivery_city = row[2]
             delivery_zip = row[4]
             delivery_weight = row[6]
-            h.insert(package_id, delivery_address, delivery_deadline, delivery_city, delivery_zip, delivery_weight, 'at the hub')
+            h.insert(package_id, delivery_address, delivery_deadline, delivery_city, delivery_zip, delivery_weight, 'At the hub')
     return h
 
 def read_distance_data(file: str) -> AdjacencyList:
