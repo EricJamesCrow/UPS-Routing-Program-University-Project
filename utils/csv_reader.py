@@ -4,9 +4,20 @@ from itertools import islice
 import csv
 
 def read_package_data(file: str) -> HashMap:
+    '''
+    Reads in package data from the provided csv and inserts each row into the HashMap.
+
+    Parameters:
+    file (str): The file path to the csv.
+
+    Returns:
+    HashMap: HashMap of the package data.
+
+    '''
     h = HashMap()
     with open(file) as csvfile:
         readCSV = csv.reader(csvfile, delimiter=',')
+        # skip first five lines of the file, iterate through each row and then add the corresponding data elements to the HashMap
         for row in islice(readCSV, 5, None):
             package_id = int(row[0])
             delivery_address = row[1]
@@ -18,24 +29,42 @@ def read_package_data(file: str) -> HashMap:
     return h
 
 def read_distance_data(file: str) -> AdjacencyList:
+    '''
+    Reads in the distance data from the provided csv and inserts each point into an AdjacencyList.
+
+    Parameters:
+    file (str): The file path to the csv.
+
+    Returns:
+    AdjacencyList: An AdjacencyList containing all of the distance data from the provided csv.
+
+    '''
+    # intialize an AdjacencyList
     adjList = AdjacencyList()
-    vertexes = []
+    # initialize list of addresses
+    addresses = []
     reader = csv.reader(open(file), delimiter=',')
+    # start reading at the fifth line of the file
     headers = next(islice(reader, 4, None))
+    # iterate through and add all of the addresses located in the headers to the addresses list and adjList
     for h in headers[2:]:
         h = h.split('\n')
         address = h[1].replace(',', '').strip()
         new_vertex = address
-        vertexes.append(new_vertex)
+        addresses.append(new_vertex)
         adjList.add_vertex(new_vertex)
     index = 0
+    # iterate through the file
     for lst in reader:
+        # set counter to zero to insure all of the addresses for each row are grabbed
         counter = 0
+        # iterate through the current line
         for obj in lst[2:]:
             if obj == '':
                 continue
             distance = float(obj)
-            adjList.add_undirected_edge(vertexes[index], vertexes[counter], distance)
+            # add edge to the adjacency list
+            adjList.add_undirected_edge(addresses[index], addresses[counter], distance)
             counter += 1
         index += 1
     return adjList

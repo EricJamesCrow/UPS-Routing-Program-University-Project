@@ -1,5 +1,8 @@
-# https://www.youtube.com/watch?v=9HFbhPscPU0
 class HashMap:
+    '''
+    HashMap implemented from the help of this video:
+    # Source: https://www.youtube.com/watch?v=9HFbhPscPU0
+    '''
     def __init__(self, size=40):
         self.size = size
         self.map = [None] * self.size
