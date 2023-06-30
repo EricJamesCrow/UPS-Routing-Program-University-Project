@@ -20,6 +20,8 @@ class AdjacencyList(object):
         
     def add_directed_edge(self, from_vertex: str, to_vertex: str, weight: float) -> None:
         '''
+        Adds a directed edge to the adjacency list.
+
         Parameters:
         from_vertex (str): The 'from' address.
         to_vertex (str): The 'to' address.
@@ -32,7 +34,8 @@ class AdjacencyList(object):
         
     def add_undirected_edge(self, vertex_a: str, vertex_b: str, weight: float) -> None:
         '''
-        Adds an undirected edge to the adjacency list.
+        Adds an undirected edge to the adjacency list. It does this by calling self.add_directed_edge
+        on the vertexes going from point a to b, as well as from point b to a.
 
         Parameters:
         from_vertex (str): The 'from' address.
