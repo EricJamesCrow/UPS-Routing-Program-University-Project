@@ -30,6 +30,9 @@ def main() -> float:
     Returns:
     float: The total miles traveled for all three trucks.
 
+    Time Complexity: O(n^2)
+    Space Complexity: O(1)
+
     '''
     # initialize three truck objects
     truck_one, truck_two, truck_three = Truck(), Truck(), Truck()
@@ -71,6 +74,9 @@ def load_packages(truck: Truck, truck_time: datetime, packages: list[int]) -> No
     truck_time (datetime.datetime): The time the truck loads all of the packages.
     packages (list[int]): List of the id numbers of the packages that need to be loaded onto the truck.
 
+    Time Complexity: O(n)
+    Space Complexity: O(n) # due to the deepcopy (snapshot) of PACKAGE_HASH_MAP's current state.
+
     '''
     for package in packages:
         truck.add((package, PACKAGE_HASH_MAP.get(package)))
@@ -94,6 +100,9 @@ def greedy_algorithm(truck: Truck, distance_adjacency_list: AdjacencyList, start
 
     Returns:
     float: The total miles the truck had to travel to deliver all of the packages.
+
+    Time Complexity: O(n^2)
+    Space Complexity: O(n)
 
     '''
     lowest_distance = 100000
@@ -144,6 +153,9 @@ def return_dict_values(inputted_time: datetime) -> HashMap:
     Returns:
     HashMap: Returns the snapshot of the HashMap in which its key value is less than or equal to inputted_time.
 
+    Time Complexity: O(n log n)
+    Space Complexity: O(1)
+
     '''
     time_dict_reversed = {k: TIME_DICT[k] for k in sorted(TIME_DICT, key=lambda x: list(TIME_DICT.keys()).index(x), reverse=True)}
     for key, value in time_dict_reversed.items():
@@ -158,6 +170,9 @@ def display_single_package_information(inputted_time: datetime, package_id_numbe
     Parameters:
     inputted_time (datetime.datetime): The time up to when the package was last updated should be returned.
     package_id_number (int): The id number of the package. Necessary for the lookup function that has been implemented in my HashMap.
+
+    Time Complexity: O(n log n)
+    Space Complexity: O(1)
 
     '''
     # call the return dict values to get the first HashMap whose key value is less than or equal to inputted_time
@@ -194,6 +209,9 @@ def display_all_package_information(inputted_time: datetime) -> None:
 
     Parameters:
     inputted_time (datetime.datetime): The time up to when the time dictionary was last updated should be returned.
+
+    Time Complexity: O(n log n)
+    Space Complexity: O(1)
 
     '''
     # call the return dict values to get the first HashMap whose key value is less than or equal to inputted_time
