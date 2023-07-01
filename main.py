@@ -31,7 +31,7 @@ def main() -> float:
     float: The total miles traveled for all three trucks.
 
     Time Complexity: O(n^2)
-    Space Complexity: O(1)
+    Space Complexity: O(n)
 
     '''
     # initialize three truck objects
@@ -153,8 +153,8 @@ def return_dict_values(inputted_time: datetime) -> HashMap:
     Returns:
     HashMap: Returns the snapshot of the HashMap in which its key value is less than or equal to inputted_time.
 
-    Time Complexity: O(n log n)
-    Space Complexity: O(1)
+    Time Complexity: O(n log n) # due to the sorted function being called on TIME_DICT
+    Space Complexity: O(n)
 
     '''
     time_dict_reversed = {k: TIME_DICT[k] for k in sorted(TIME_DICT, key=lambda x: list(TIME_DICT.keys()).index(x), reverse=True)}
@@ -172,7 +172,7 @@ def display_single_package_information(inputted_time: datetime, package_id_numbe
     package_id_number (int): The id number of the package. Necessary for the lookup function that has been implemented in my HashMap.
 
     Time Complexity: O(n log n)
-    Space Complexity: O(1)
+    Space Complexity: O(n)
 
     '''
     # call the return dict values to get the first HashMap whose key value is less than or equal to inputted_time
@@ -211,7 +211,7 @@ def display_all_package_information(inputted_time: datetime) -> None:
     inputted_time (datetime.datetime): The time up to when the time dictionary was last updated should be returned.
 
     Time Complexity: O(n log n)
-    Space Complexity: O(1)
+    Space Complexity: O(n)
 
     '''
     # call the return dict values to get the first HashMap whose key value is less than or equal to inputted_time

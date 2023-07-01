@@ -12,6 +12,9 @@ class Truck(object):
 
         Parameters:
         package (list): Takes a list which contains the package data
+
+        Time Complexity: O(1)
+        Space Complexity: O(1)
         
         '''
         self.packages.append(package)

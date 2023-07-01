@@ -13,6 +13,9 @@ def read_package_data(file: str) -> HashMap:
     Returns:
     HashMap: HashMap of the package data.
 
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+
     '''
     h = HashMap()
     with open(file) as csvfile:
@@ -37,6 +40,10 @@ def read_distance_data(file: str) -> AdjacencyList:
 
     Returns:
     AdjacencyList: An AdjacencyList containing all of the distance data from the provided csv.
+
+    
+    Time Complexity: O(n^2)
+    Space Complexity: O(n^2)
 
     '''
     # intialize an AdjacencyList

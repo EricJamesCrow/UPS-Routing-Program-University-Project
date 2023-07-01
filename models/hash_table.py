@@ -20,6 +20,9 @@ class HashMap:
 
         Returns:
         int: Returns the hash for the package.
+
+        Time Complexity: O(1)
+        Space Complexity: O(1)
         
         '''
         return key - 1
@@ -30,6 +33,9 @@ class HashMap:
 
         Returns:
         object: Returns itself (the HashMap object)
+
+        Time Complexity: O(n)
+        Space Complexity: O(n)
 
         '''
         old_map = self.map
@@ -61,6 +67,9 @@ class HashMap:
         Returns:
         object: Returns itself (the HashMap object)
 
+        Time Complexity: O(1), O(n) if resize gets triggered
+        Space Complexity: O(1)
+
         '''
         key = package_id
         if key > self.size:
@@ -88,6 +97,10 @@ class HashMap:
         Returns:
         object: Returns itself (the HashMap object)
 
+        Time Complexity: O(1)
+        Space Complexity: O(1)
+
+
         '''
         key = package_id
         value = [delivery_address, delivery_deadline, delivery_city, delivery_zip, package_weight, delivery_status]
@@ -105,6 +118,9 @@ class HashMap:
 
         Returns:
         list: Returns a list which contains the package data.
+
+        Time Complexity: O(1)
+        Space Complexity: O(1)
 
         '''
         key_hash = self._get_hash(key)

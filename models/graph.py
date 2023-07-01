@@ -14,6 +14,9 @@ class AdjacencyList(object):
 
         Parameters:
         new_vertex (str): The vertex to be added (an address in the context of this program)
+
+        Time Complexity: O(1)
+        Space Complexity: O(1)
         
         '''
         self.adjacency_list[new_vertex] = []
@@ -26,6 +29,9 @@ class AdjacencyList(object):
         from_vertex (str): The 'from' address.
         to_vertex (str): The 'to' address.
         weight (float): The distance (weight) from the 'from' address to the 'to' address.
+
+        Time Complexity: O(n)
+        Space Complexity: O(1)
 
         '''
         edge = (to_vertex, weight)
@@ -41,6 +47,10 @@ class AdjacencyList(object):
         from_vertex (str): The 'from' address.
         to_vertex (str): The 'to' address.
         weight (float): The distance (weight) from the 'from' address to the 'to' address.
+
+        
+        Time Complexity: O(n)
+        Space Complexity: O(1)
          
         '''
         self.add_directed_edge(vertex_a, vertex_b, weight)
@@ -53,6 +63,10 @@ class AdjacencyList(object):
         Parameters:
         from_vertex (str): The 'from' address.
         to_vertex (str): The 'to' address.
+
+        
+        Time Complexity: O(n)
+        Space Complexity: O(1)
 
         Returns:
         float: Returns the distance (weight) from the 'from' address to the 'to' address.
