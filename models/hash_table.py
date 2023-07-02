@@ -68,7 +68,7 @@ class HashMap:
         object: Returns itself (the HashMap object)
 
         Time Complexity: O(1), O(n) if resize gets triggered
-        Space Complexity: O(1)
+        Space Complexity: O(1), O(n) if resize gets triggered
 
         '''
         key = package_id
