@@ -1,5 +1,11 @@
 # Project: Efficient Routing and Delivery Distribution for WGUPS
 
+## Demonstration
+
+Here is a GIF demonstrating the functioning of the application:
+
+![](https://raw.githubusercontent.com/EricJamesCrow/UPS-Routing-Program-University-Project/main/screenshots/project_demo.gif)
+
 ## Table of Contents
 
 1. [Introduction](#Introduction)
