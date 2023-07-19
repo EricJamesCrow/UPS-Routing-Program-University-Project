@@ -2,7 +2,7 @@
 
 ## Demonstration
 
-Here is a GIF demonstrating the functioning of the application:
+Here is a GIF demonstrating the application:
 
 ![](https://raw.githubusercontent.com/EricJamesCrow/UPS-Routing-Program-University-Project/main/screenshots/project_demo.gif)
 
